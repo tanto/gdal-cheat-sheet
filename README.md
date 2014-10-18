@@ -1,29 +1,29 @@
-Cheat sheet for GDAL/OGR command-line geodata tools
+Cheat sheet per le utility da riga di comando di GDAL/OGR
 
-Vector operations
+Operazioni sui vettori
 ---
 
-__Get vector information__
+__Ricavare informazioni su una sorgente vettoriale__
 
 	ogrinfo -so input.shp layer-name
 
-Or, for all layers  
+Oppure, per tutti i layer
 
 	ogrinfo -al -so input.shp
 
-__Print vector extent__
+__Stampare l'estensione di una sorgente vettoriale__
 
 	ogrinfo input.shp layer-name | grep Extent
 	
-__List vector drivers__
+__Stampare la lista di tutti driver vettoriali__
 
 	ogr2ogr --formats
 
-__Convert between vector formats__
+__Conversioni tra formati vettoriali__
 
 	ogr2ogr -f "GeoJSON" output.json input.shp
 
-__Print count of features with attributes matching a given pattern__
+__Stampare il numero di feature caratterizzati da un determinato attributo__
 
 	ogrinfo input.shp layer-name | grep "Search Pattern" | sort | uniq -c
 
