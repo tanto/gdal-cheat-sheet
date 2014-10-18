@@ -221,6 +221,14 @@ __Get values for a specific location in a raster__
 
 Other
 ---
+__Per ottenere un DB SQLITE con punti linee e poligoni del un file Open Street Map pbf__
+
+ogr2ogr -f "SQLite" -dsco SPATIALITE=YES 20140918_emilia-romagna.sqlite emilia-romagna.pbf
+
+__Per ottenere un DB SPATIALITE navigabile da SQLITE__
+
+spatialite_osm_net -o my_country.osm.pbf -d my_country.sqlite -T roads
+
 __Convert KML points to CSV (simple)__
 
 	ogr2ogr -f CSV output.csv input.kmz -lco GEOMETRY=AS_XY
